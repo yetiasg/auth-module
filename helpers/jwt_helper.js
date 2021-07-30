@@ -42,7 +42,6 @@ const signRefreshToken = (userId) => {
 
 const verifyRefreshToken = (refreshToken) => {
   return new Promise((resolve, reject) => {
-    if(refreshToken.length<1) return reject(createError.Unauthorized());
     JWT.verify(refreshToken, config.REFRESH_TOKEN_SECRET, (err, payload) => {
       if (err){
         const message = err.name === 'JsonWebTokenError' ? 'Unauthorized' : err.message;
