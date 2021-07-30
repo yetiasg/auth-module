@@ -1,0 +1,43 @@
+### Root route
+GET http://localhost:3005/
+
+
+### Protected route
+GET http://localhost:3005/protected
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTAzMTFjNWM5ZDYwNzRiMjg4NGMwYmUiLCJpYXQiOjE2Mjc2Mjc0ODcsImV4cCI6MTYyNzg4NjY4N30.Diq8-HFy-KoeIHeFs8Sz54AJXu2Nfs77SvTg_T3oOFU
+
+
+### Login route
+POST http://localhost:3005/auth/login
+Content-Type: application/json
+
+{
+    "email": "youremail@domain.com",
+    "password": "123456789"
+}
+
+
+### Register route
+POST http://localhost:3005/auth/register
+Content-Type: application/json
+
+{
+    "firstName": "YourFirstName",
+    "lastName": "YourLastName",
+    "email": "youremail@domain.com",
+    "password": "123456789",
+    "repeatPassword": "123456789"
+}
+
+
+### Refresh token route
+POST http://localhost:3005/auth/refresh
+Content-Type: application/json
+
+{
+    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTAzMTFjNWM5ZDYwNzRiMjg4NGMwYmUiLCJpYXQiOjE2Mjc2MjgwMTUsImV4cCI6MTY1OTE4NTYxNX0.zTd1kY2IavsFFxbkCzisLBGOtssdHMoRpZ4AUcLgeow"
+}
+
+
+### Error route
+GET http://localhost:3005/abcde
